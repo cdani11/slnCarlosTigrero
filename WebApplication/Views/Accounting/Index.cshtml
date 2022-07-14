@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Modal -->
+<div class="modal fade" id="mdlRegister" tabindex="-1" aria-labelledby="modalInvoice" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalInvoice">Registro de detalles</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Producto</label>
+                        <select class="col-10 form-control" id="cmbProducts">
+                            <option value="">Seleccione</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Cantidad</label>
+                        <input type="number" class="form-control calculateTotal" id="NumQuantity">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Precio</label>
+                        <input type="number" step="0.01" class="form-control calculateTotal" id="NumPrice">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Total</label>
+                        <input type="number" class="form-control" id="NumTotal" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSave">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="body-content">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table id="tblInvoice" class="table table-sm table-bordered table-striped">
+                <thead style="text-align: center">
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-12">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdlRegister">
+            Nuevo
+        </button>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/Accounting/Index.js"></script>
+}
